@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  height: 4.5rem;
+  width: auto;
+  background-color: transparent;
+  transition: background-color 0.2s ease-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(232, 239, 255);
+}
+.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  height: 4.5rem;
+  width: auto;
+  background-color: rgb(232, 239, 255);
+}
