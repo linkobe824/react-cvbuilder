@@ -1,0 +1,41 @@
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.clear-button {
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 81, 0, 0.993);
+  font-size: 0.9rem;
+}
+
+.clear-button:hover {
+  cursor: pointer;
+  color: rgba(255, 51, 0, 0.993);
+  text-decoration: underline;
+}
+
+.load-button {
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292e;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+.load-button:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}

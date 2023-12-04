@@ -13,6 +13,7 @@
   list-style: 0;
   text-decoration: 0;
   font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
