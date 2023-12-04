@@ -1,32 +1,25 @@
-import ButtonControl from './ButtonControl'
+import EditButton from './EditButton'
 import ArticleIcon from '@mui/icons-material/Article'
 import DesignServicesIcon from '@mui/icons-material/DesignServices'
-import { useState } from 'react'
 
-function EditControls() {
-  const [isActive, setIsActive] = useState(true)
-
-  function handleChangeState() {
-    setIsActive(!isActive)
-  }
-
+function EditControls({ onChangeControls, controlState }) {
   return (
     <div className='container vertical'>
-      <ButtonControl
-        state={isActive ? 'active' : ''}
-        onChangeState={handleChangeState}
+      <EditButton
+        isActive={controlState === 'content' ? 'active' : ''}
+        onChangeState={() => onChangeControls('content')}
       >
         {' '}
         <ArticleIcon />
         Content
-      </ButtonControl>
-      <ButtonControl
-        state={isActive ? '' : 'active'}
-        onChangeState={handleChangeState}
+      </EditButton>
+      <EditButton
+        isActive={controlState === 'customization' ? 'active' : ''}
+        onChangeState={() => onChangeControls('customization')}
       >
         <DesignServicesIcon />
         Customize
-      </ButtonControl>
+      </EditButton>
     </div>
   )
 }
