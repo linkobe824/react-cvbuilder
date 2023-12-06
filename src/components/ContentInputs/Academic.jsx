@@ -1,19 +1,19 @@
 import { academicInputFields } from '../../predefined-data/inputFields'
-import Form from './Form'
+import { academic } from '../../predefined-data/exampleData'
 import FormContainer from './FormContainer'
 import { useState } from 'react'
 
 function Academic() {
   const [isFinished, setIsFinished] = useState(true)
+  const [content, setContent] = useState([academic])
 
   return (
-    <div className='container vertical'>
-      <h2>Academic</h2>
-      <Form
-        checkCurrent={isFinished}
-        fields={academicInputFields}
-      />
-    </div>
+    <FormContainer
+      header='Academic'
+      checkCurrent={isFinished}
+      fields={academicInputFields}
+      fieldsContent={content}
+    />
   )
 }
 
