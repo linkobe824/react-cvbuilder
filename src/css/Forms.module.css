@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.buttons-pair {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  appearance: none;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.212);
+}
+.delete {
+  background-color: rgb(255, 30, 0);
+}
+
+.delete:hover {
+  background-color: rgb(221, 30, 5);
+}
+
+.cancel {
+  background-color: grey;
+}
+
+.cancel:hover {
+  background-color: rgb(100, 95, 95);
+}
+
+.save {
+  background-color: rgb(2, 103, 255);
+}
+
+.save:hover {
+  background-color: rgb(1, 92, 230);
+}

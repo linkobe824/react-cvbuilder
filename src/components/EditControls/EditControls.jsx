@@ -4,7 +4,7 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices'
 
 function EditControls({ onChangeControls, controlState }) {
   return (
-    <div className='container vertical'>
+    <div className='container vertical fit'>
       <EditButton
         isActive={controlState === 'content' ? 'active' : ''}
         onChangeState={() => onChangeControls('content')}

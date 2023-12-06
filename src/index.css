@@ -10,23 +10,23 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: 0;
-  text-decoration: 0;
+  list-style: none;
+  text-decoration: none;
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  background-color: beige;
-  padding: 2rem 10rem 0 10rem;
+  background-color: #f3f4f6;
+  padding: 2rem 15rem 0 15rem;
   height: 100vh;
   width: auto;
 }
 
 .container {
   display: flex;
-  background-color: aliceblue;
-  padding: 0.7rem;
+  background-color: white;
+  padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.178);
 }
@@ -34,4 +34,8 @@ body {
 .container.vertical {
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.container.fit {
+  height: fit-content;
 }

@@ -1,8 +1,8 @@
 import './App.css'
-import EditControls from './components/EditControls'
-import ContentInputs from './components/ContentInputs'
+import EditControls from './components/EditControls/EditControls'
+import ContentInputs from './components/ContentInputs/ContentInputs'
 import CleanAndLoadInputs from './components/CleanAndLoadInputs'
-import CustomizationOptions from './components/CustomizationOptions'
+import CustomizationOptions from './components/CustomizarionOptions/CustomizationOptions'
 import { useState } from 'react'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         onChangeControls={handleChangeControls}
         controlState={editControls}
       />
-      <div>
+      <div className='flex-container-vertical'>
         <CleanAndLoadInputs />
         <MainContent />
       </div>

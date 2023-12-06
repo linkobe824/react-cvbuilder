@@ -1,4 +1,4 @@
-import classes from '../css/EditButton.module.css'
+import classes from '../../css/EditButton.module.css'
 
 function EditButton({ children, onChangeState, isActive }) {
   return (
