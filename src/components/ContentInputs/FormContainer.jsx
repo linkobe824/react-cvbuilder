@@ -6,11 +6,21 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { useState } from 'react'
 
 function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
-  let collapseButton = <KeyboardArrowUpIcon />
   const [isCollapsed, setIsCollapsed] = useState(true)
+  const [addButtonClicked, setAddButtonClicked] = useState(false)
+  const [displayClicked, setDisplayClicked] = useState(null)
 
   function handleClick() {
     setIsCollapsed(!isCollapsed)
+  }
+
+  function handleShowForm() {
+    setAddButtonClicked(true)
+  }
+
+  function handleShowFormWithContent(displayNum) {
+    console.log(fieldsContent[displayNum])
+    setDisplayClicked(displayNum)
   }
 
   function checkIsCollapsedAndFieldsContent() {
@@ -22,10 +32,11 @@ function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
                 <Display
                   key={idx}
                   title={val.school}
+                  onShowFormWithContent={() => handleShowFormWithContent(idx)}
                 />
               ))
             : ''}
-          <AddButton />
+          <AddButton onShowForm={handleShowForm} />
         </>
       )
     }
@@ -43,10 +54,19 @@ function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
           }`}
           onClick={handleClick}
         >
-          {collapseButton}
+          <KeyboardArrowUpIcon />
         </button>
       </div>
-      {checkIsCollapsedAndFieldsContent()}
+      {displayClicked !== null ? (
+        <Form
+          fields={fields}
+          inputsContent={fieldsContent[displayClicked]}
+        />
+      ) : addButtonClicked ? (
+        <Form fields={fields} />
+      ) : (
+        checkIsCollapsedAndFieldsContent()
+      )}
     </div>
   )
 }

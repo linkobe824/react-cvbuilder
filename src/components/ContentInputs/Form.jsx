@@ -1,7 +1,7 @@
 import InputField from './InputField'
 import classes from '../../css/Forms.module.css'
 
-function Form({ checkCurrent, fields, inputsContent }) {
+function Form({ checkCurrent = true, fields, inputsContent }) {
   return (
     <form className={classes.container}>
       <label
@@ -19,7 +19,7 @@ function Form({ checkCurrent, fields, inputsContent }) {
         const objParameter = val.name
         return (
           <InputField
-            value={inputsContent ? inputsContent[0][objParameter] : ''}
+            value={inputsContent ? inputsContent[objParameter] : ''}
             key={idx}
             {...val}
             disabled={!checkCurrent && val.name === 'endDate' ? true : false}

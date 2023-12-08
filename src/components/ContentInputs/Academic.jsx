@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 function Academic() {
   const [isFinished, setIsFinished] = useState(true)
-  const [content, setContent] = useState([academic])
+  const [content, setContent] = useState(academic)
 
   return (
     <FormContainer
