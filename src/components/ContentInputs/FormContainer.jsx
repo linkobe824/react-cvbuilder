@@ -13,6 +13,24 @@ function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
     setIsCollapsed(!isCollapsed)
   }
 
+  function checkIsCollapsedAndFieldsContent() {
+    if (!isCollapsed) {
+      return (
+        <>
+          {fieldsContent.length > 0
+            ? fieldsContent.map((val, idx) => (
+                <Display
+                  key={idx}
+                  title={val.school}
+                />
+              ))
+            : ''}
+          <AddButton />
+        </>
+      )
+    }
+  }
+
   return (
     <div className='container vertical'>
       <div className={classes['header-container']}>
@@ -28,16 +46,7 @@ function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
           {collapseButton}
         </button>
       </div>
-      {isCollapsed
-        ? ''
-        : fieldsContent.map((val, idx) => (
-            <Display
-              key={idx}
-              title={val.school}
-              handleShowForm={() => val}
-            />
-          ))}
-      {isCollapsed ? '' : <AddButton />}
+      {checkIsCollapsedAndFieldsContent()}
     </div>
   )
 }
