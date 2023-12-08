@@ -1,4 +1,6 @@
 import Form from './Form'
+import Display from './Display'
+import AddButton from './AddButton'
 import classes from '../../css/FormContainer.module.css'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { useState } from 'react'
@@ -26,17 +28,28 @@ function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
           {collapseButton}
         </button>
       </div>
-      {!isCollapsed ? (
-        <Form
-          fields={fields}
-          checkCurrent={checkCurrent}
-          inputsContent={fieldsContent}
-        />
-      ) : (
-        ''
-      )}
+      {isCollapsed
+        ? ''
+        : fieldsContent.map((val, idx) => (
+            <Display
+              key={idx}
+              title={val.school}
+              handleShowForm={() => val}
+            />
+          ))}
+      {isCollapsed ? '' : <AddButton />}
     </div>
   )
 }
 
 export default FormContainer
+
+// {!isCollapsed ? (
+//   <Form
+//     fields={fields}
+//     checkCurrent={checkCurrent}
+//     inputsContent={fieldsContent}
+//   />
+// ) : (
+//   ''
+// )}
