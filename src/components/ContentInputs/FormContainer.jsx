@@ -5,7 +5,7 @@ import classes from '../../css/FormContainer.module.css'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { useState } from 'react'
 
-function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
+function FormContainer({ header, fields, fieldsContent }) {
   const [isCollapsed, setIsCollapsed] = useState(true)
   const [addButtonClicked, setAddButtonClicked] = useState(false)
   const [displayClicked, setDisplayClicked] = useState(null)
@@ -31,7 +31,7 @@ function FormContainer({ header, fields, checkCurrent, fieldsContent }) {
             ? fieldsContent.map((val, idx) => (
                 <Display
                   key={idx}
-                  title={val.school}
+                  data={val}
                   onShowFormWithContent={() => handleShowFormWithContent(idx)}
                 />
               ))

@@ -1,7 +1,43 @@
 .display-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 0 1rem 0;
-  border: 1px solid black;
+  padding: 1rem;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292e;
+}
+
+.display-container:hover {
+  border: 1px solid rgba(90, 87, 87, 0.87);
+}
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.8rem;
+}
+
+.button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background-color: white;
+  font-size: small;
+}
+
+.button:hover {
+  color: rgb(0, 89, 255);
 }
